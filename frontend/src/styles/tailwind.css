@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #111827; /* gray-900 */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #111827; /* gray-900 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #111827; /* gray-900 */
+    --color-muted: #F3F4F6; /* gray-100 */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Brand Colors */
+    --color-primary: #6366F1; /* indigo-500 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    --color-secondary: #8B5CF6; /* violet-500 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    --color-accent: #10B981; /* emerald-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Semantic Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* UI Elements */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #6366F1; /* indigo-500 */
+    
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    --color-surface: #FFFFFF; /* white */
+    --color-trust: #3B82F6; /* blue-500 */
+    --color-trust-foreground: #FFFFFF; /* white */
+    --color-conversion: #EF4444; /* red-500 */
+    --color-conversion-foreground: #FFFFFF; /* white */
+    
+    /* Spacing System */
+    --spacing-xs: 0.5rem; /* 8px */
+    --spacing-sm: 1rem; /* 16px */
+    --spacing-md: 1.5rem; /* 24px */
+    --spacing-lg: 2rem; /* 32px */
+    --spacing-xl: 3rem; /* 48px */
+    --spacing-2xl: 4rem; /* 64px */
+    
+    /* Shadow System */
+    --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-prominent: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Brand Grid */
+    --grid-brand-tint: rgba(99, 102, 241, 0.1);
+    
+    /* Animation Timing */
+    --transition-fast: 200ms ease-out;
+    --transition-medium: 300ms ease-out;
+    --transition-slow: 400ms ease-out;
+    --transition-complex: 600ms ease-out;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Typography System */
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  }
+  
+  /* Brand Grid System */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .brand-grid-lines {
+    background-image: 
+      linear-gradient(to right, var(--grid-brand-tint) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-brand-tint) 1px, transparent 1px);
+    background-size: calc(100% / 24) var(--spacing-md);
+  }
+  
+  /* Animation Classes */
+  .typewriter-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: var(--color-primary);
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .floating-animation {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .pulse-gentle {
+    animation: pulseGentle 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGentle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  /* Scroll Progress Indicator */
+  .scroll-progress {
+    background: linear-gradient(90deg, var(--color-primary) var(--scroll-progress, 0%), transparent 0%);
+  }
+  
+  /* Brand Shadows */
+  .shadow-brand-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .shadow-brand-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-brand-prominent {
+    box-shadow: var(--shadow-prominent);
+  }
+  
+  .shadow-brand-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Interactive Elements */
+  .brand-button-hover {
+    transition: all var(--transition-medium);
+  }
+  
+  .brand-button-hover:hover {
+    transform: scale(1.05);
+    box-shadow: inset 0 2px 20px rgba(99, 102, 241, 0.2);
+  }
+  
+  .brand-card-hover {
+    transition: all var(--transition-medium);
+  }
+  
+  .brand-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 8px 40px rgba(99, 102, 241, 0.15);
+  }
+  
+  /* Code Snippet Styling */
+  .floating-code {
+    position: absolute;
+    opacity: 0.05;
+    pointer-events: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+  }
+  
+  /* Skill Molecule Connections */
+  .skill-connection {
+    stroke: var(--color-primary);
+    stroke-width: 2;
+    stroke-dasharray: 0;
+    transition: stroke-dasharray var(--transition-medium);
+  }
+  
+  .skill-connection.active {
+    stroke-dasharray: 100;
+  }
+  
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .brand-grid {
+      grid-template-columns: repeat(12, 1fr);
+    }
+    
+    .brand-card-hover:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+  }
+  
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .floating-animation,
+    .pulse-gentle,
+    .typewriter-cursor::after {
+      animation: none;
+    }
+    
+    .brand-button-hover:hover,
+    .brand-card-hover:hover {
+      transform: none;
+    }
+  }
+  
+  /* Focus Styles */
+  .focus-brand:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  /* Image Filters */
+  .brand-image-enhance {
+    filter: saturate(1.1) contrast(1.05);
+  }
+  
+  /* Backdrop Blur for Floating Elements */
+  .backdrop-brand {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
