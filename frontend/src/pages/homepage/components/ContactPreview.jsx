@@ -17,41 +17,27 @@ const ContactPreview = ({ onNavigate }) => {
       icon: 'Mail',
       title: 'Email',
       description: 'Drop me a line anytime',
-      value: 'gokul@example.com',
-      action: 'mailto:gokul@example.com',
+      value: 'gokulprasanthbm@gmail.com',
+      action: 'mailto:gokulprasanthbm@gmail.com',
       color: 'primary'
     },
-    {
-      icon: 'Phone',
-      title: 'Phone',
-      description: 'Call for urgent projects',
-      value: '+1 (555) 123-4567',
-      action: 'tel:+15551234567',
-      color: 'secondary'
-    },
+    
     {
       icon: 'MapPin',
       title: 'Location',
-      description: 'Based in San Francisco',
-      value: 'San Francisco, CA',
+      description: 'Based in karnataka, India',
+      value: 'Bengaluru, karnataka',
       action: '#',
-      color: 'accent'
-    },
-    {
-      icon: 'Calendar',
-      title: 'Schedule',
-      description: 'Book a consultation',
-      value: 'Available Mon-Fri',
-      action: 'https://calendly.com/gokulprasanth',
       color: 'primary'
-    }
+    },
+    
   ];
 
   const socialLinks = [
-    { icon: 'Github', url: 'https://github.com/gokulprasanth', label: 'GitHub' },
-    { icon: 'Linkedin', url: 'https://linkedin.com/in/gokulprasanth', label: 'LinkedIn' },
-    { icon: 'Twitter', url: 'https://twitter.com/gokulprasanth', label: 'Twitter' },
-    { icon: 'Instagram', url: 'https://instagram.com/gokulprasanth', label: 'Instagram' }
+    { icon: 'Github', url: 'https://github.com/gokulprasanthb', label: 'GitHub' },
+    { icon: 'Linkedin', url: 'https://www.linkedin.com/in/gokul-prasanth-ab3ab7365/', label: 'LinkedIn' },
+    { icon: 'Twitter', url: 'https://twitter.com', label: 'Twitter' },
+    { icon: 'Instagram', url: 'https://instagram.com', label: 'Instagram' }
   ];
 
   const handleInputChange = (e) => {
@@ -62,19 +48,29 @@ const ContactPreview = ({ onNavigate }) => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e?.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
-    
-    // Show success message (in real app, you'd handle this properly)
-    alert('Thank you for your message! I\'ll get back to you soon.');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "01301507-3f47-4331-ae18-807dfb1e4d4c");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      alert(res.message);
+    }
+
+    event.target.reset();
   };
 
   const getColorClasses = (color) => {
@@ -128,7 +124,7 @@ const ContactPreview = ({ onNavigate }) => {
             transition={{ delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Whether you have a project in mind, need technical consultation, or just want to say hello, I'd love to hear from you. Let's turn your ideas into digital reality.
+            Whether you have a project in mind or just want to say hello, I'd love to hear from you. Let's turn your ideas into digital reality.
           </motion.p>
         </motion.div>
 
@@ -194,27 +190,6 @@ const ContactPreview = ({ onNavigate }) => {
                 ))}
               </div>
             </motion.div>
-
-            {/* Quick Stats */}
-            <motion.div 
-              className="bg-card border border-border rounded-brand-lg p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-text-primary mb-4">Response Time</h4>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">24h</div>
-                  <div className="text-sm text-text-secondary">Email Response</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-secondary">2-3 days</div>
-                  <div className="text-sm text-text-secondary">Project Proposal</div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}
@@ -228,11 +203,12 @@ const ContactPreview = ({ onNavigate }) => {
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-text-primary mb-2">Send a Message</h3>
               <p className="text-text-secondary">
-                Fill out the form below and I'll get back to you within 24 hours.
+                Fill out the form below
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              
               <Input
                 label="Full Name"
                 type="text"
@@ -255,14 +231,14 @@ const ContactPreview = ({ onNavigate }) => {
 
               <div>
                 <label className="block text-sm font-medium text-text-primary mb-2">
-                  Project Details
+                  Message
                 </label>
                 <textarea
                   name="message"
                   value={formData?.message}
                   onChange={handleInputChange}
-                  placeholder="Tell me about your project, timeline, and any specific requirements..."
-                  rows={6}
+                  placeholder="Write your message"
+                  rows={4}
                   required
                   className="w-full px-4 py-3 border border-border rounded-brand bg-background text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-brand-medium resize-none"
                 />
@@ -280,22 +256,9 @@ const ContactPreview = ({ onNavigate }) => {
               >
                 {isSubmitting ? 'Sending Message...' : 'Send Message'}
               </Button>
-            </form>
 
-            <div className="mt-6 pt-6 border-t border-border text-center">
-              <p className="text-sm text-text-secondary mb-4">
-                Prefer a more detailed discussion?
-              </p>
-              <Button
-                variant="outline"
-                onClick={() => onNavigate('/contact')}
-                iconName="ArrowRight"
-                iconPosition="right"
-                className="brand-button-hover"
-              >
-                Visit Full Contact Page
-              </Button>
-            </div>
+              
+            </form>
           </motion.div>
         </div>
 
@@ -329,7 +292,7 @@ const ContactPreview = ({ onNavigate }) => {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => window.open('/assets/cv/gokul-prasanth-cv.pdf', '_blank')}
+              onClick={() => window.open('/assets/cv/Resume.pdf', '_blank')}
               iconName="Download"
               iconPosition="left"
               className="brand-button-hover"

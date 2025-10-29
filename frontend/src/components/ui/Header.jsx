@@ -11,14 +11,14 @@ const Header = () => {
   const navigationItems = [
     { name: 'Home', path: '#hero', icon: 'Home' },
     { name: 'About', path: '#about', icon: 'User' },
+    { name: 'Projects', path: '#portfolio', icon: 'Briefcase' },
     { name: 'Skills', path: '#skills', icon: 'Code' },
-    { name: 'Portfolio', path: '#portfolio', icon: 'Briefcase' },
     { name: 'Contact', path: '#contact', icon: 'Mail' }
   ];
 
-  const secondaryItems = [
-    { name: 'Testimonials', path: '#testimonials', icon: 'MessageSquare' }
-  ];
+  // const secondaryItems = [
+  //   { name: 'Testimonials', path: '#testimonials', icon: 'MessageSquare' }
+  // ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,12 +60,6 @@ const Header = () => {
                 </div>
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-gentle"></div>
               </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl font-bold text-text-primary group-hover:text-primary transition-colors duration-brand-medium">
-                  Gokul Prasanth
-                </h1>
-                <p className="text-xs text-text-secondary font-mono">Digital Craftsman</p>
-              </div>
             </button>
           </div>
 
@@ -81,27 +75,6 @@ const Header = () => {
                 <span>{item?.name}</span>
               </button>
             ))}
-            
-            {/* More Menu */}
-            <div className="relative group">
-              <button className="flex items-center space-x-2 px-4 py-2 rounded-brand text-sm font-medium text-text-secondary hover:text-primary hover:bg-muted transition-all duration-brand-medium focus-brand">
-                <Icon name="MoreHorizontal" size={16} />
-                <span>More</span>
-              </button>
-              
-              <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-brand-lg shadow-brand-prominent opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-brand-medium">
-                {secondaryItems?.map((item) => (
-                  <button
-                    key={item?.path}
-                    onClick={() => scrollToSection(item?.path)}
-                    className="flex items-center space-x-3 w-full px-4 py-3 text-sm text-left hover:bg-muted transition-colors duration-brand-fast first:rounded-t-brand-lg last:rounded-b-brand-lg text-text-secondary"
-                  >
-                    <Icon name={item?.icon} size={16} />
-                    <span>{item?.name}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
           </nav>
 
           {/* CTA Button */}
@@ -144,7 +117,7 @@ const Header = () => {
         }`}>
           <div className="px-6 py-4 bg-card border-t border-border">
             <nav className="space-y-2">
-              {[...navigationItems, ...secondaryItems]?.map((item) => (
+              {[...navigationItems]?.map((item) => (
                 <button
                   key={item?.path}
                   onClick={() => scrollToSection(item?.path)}

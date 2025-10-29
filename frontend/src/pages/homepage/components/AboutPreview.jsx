@@ -1,8 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
 
 const AboutPreview = ({ onNavigate }) => {
   const personalityTraits = [
@@ -91,7 +89,7 @@ const AboutPreview = ({ onNavigate }) => {
                 transition={{ delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                I'm a passionate fullstack developer who believes that great technology should be invisible to users but transformative for businesses. With over 3 years of experience in React, Node.js, and modern web technologies, I specialize in creating scalable solutions that bridge the gap between complex technical requirements and intuitive user experiences.
+                A passionate and skilled web developer with strong proficiency in both front-end and back-end technologies. I’ve cultivated solid expertise through building dynamic and responsive web applications. My toolkit includes React JS, Node JS, Tailwind CSS, and more, enabling me to deliver versatile and efficient solutions. I’m always eager to explore new programming languages and frameworks.
               </motion.p>
             </div>
 
@@ -127,35 +125,6 @@ const AboutPreview = ({ onNavigate }) => {
             </motion.div>
 
             {/* CTA */}
-            <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-              viewport={{ once: true }}
-            >
-              <Button
-                variant="default"
-                size="lg"
-                onClick={() => onNavigate('/about')}
-                iconName="ArrowRight"
-                iconPosition="right"
-                className="brand-button-hover"
-              >
-                Read My Full Story
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => onNavigate('/skills')}
-                iconName="Code"
-                iconPosition="left"
-                className="brand-button-hover"
-              >
-                View Technical Skills
-              </Button>
-            </motion.div>
           </motion.div>
 
           {/* Visual Section */}
@@ -191,35 +160,6 @@ const AboutPreview = ({ onNavigate }) => {
             <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-2xl -z-10"></div>
           </motion.div>
         </div>
-
-        {/* Mission Statement */}
-        <motion.div 
-          className="mt-20 text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-brand-xl p-8 md:p-12 border border-border">
-            <Icon name="Quote" size={32} className="text-primary mx-auto mb-6" />
-            <blockquote className="text-xl md:text-2xl font-medium text-text-primary leading-relaxed mb-6">
-              "My mission is to transform complex business challenges into elegant, scalable digital solutions that not only meet technical requirements but exceed user expectations and drive measurable results."
-            </blockquote>
-            <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 rounded-full overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=48&h=48&fit=crop&crop=face"
-                  alt="Gokul Prasanth"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <div className="font-semibold text-text-primary">Gokul Prasanth</div>
-                <div className="text-sm text-text-secondary">Digital Craftsman</div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

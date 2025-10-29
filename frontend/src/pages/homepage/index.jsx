@@ -5,7 +5,6 @@ import HeroSection from './components/HeroSection';
 import AboutPreview from './components/AboutPreview';
 import SkillsPreview from './components/SkillsPreview';
 import ProjectsPreview from './components/ProjectsPreview';
-import TestimonialsSection from './components/TestimonialsSection';
 import ContactPreview from './components/ContactPreview';
 
 const Homepage = () => {
@@ -39,15 +38,15 @@ const Homepage = () => {
           <section id="about">
             <AboutPreview onNavigate={scrollToSection} />
           </section>
-          <section id="skills">
-            <SkillsPreview onNavigate={scrollToSection} />
-          </section>
+          
           <section id="portfolio">
             <ProjectsPreview onNavigate={scrollToSection} />
           </section>
-          <section id="testimonials">
-            <TestimonialsSection onNavigate={scrollToSection} />
+
+          <section id="skills">
+            <SkillsPreview onNavigate={scrollToSection} />
           </section>
+          
           <section id="contact">
             <ContactPreview onNavigate={scrollToSection} />
           </section>
