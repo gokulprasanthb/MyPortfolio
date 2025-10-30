@@ -216,6 +216,7 @@ const ContactPreview = ({ onNavigate }) => {
                 value={formData?.name}
                 onChange={handleInputChange}
                 placeholder="Enter your full name"
+                className = "w-full px-4 py-3 border border-border rounded-brand bg-background text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-brand-medium resize-none"
                 required
               />
 
@@ -226,6 +227,7 @@ const ContactPreview = ({ onNavigate }) => {
                 value={formData?.email}
                 onChange={handleInputChange}
                 placeholder="Enter your email address"
+                className = "w-full px-4 py-3 border border-border rounded-brand bg-background text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-brand-medium resize-none"
                 required
               />
 

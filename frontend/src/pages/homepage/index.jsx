@@ -7,6 +7,9 @@ import SkillsPreview from './components/SkillsPreview';
 import ProjectsPreview from './components/ProjectsPreview';
 import ContactPreview from './components/ContactPreview';
 
+import Icon from '../../components/AppIcon';
+
+
 const Homepage = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -18,7 +21,7 @@ const Homepage = () => {
   return (
     <>
       <Helmet>
-        <title>Gokul Prasanth - Digital Craftsman | Fullstack Developer Portfolio</title>
+        <title>Gokul Prasanth - Portfolio</title>
         <meta name="description" content="Gokul Prasanth is a Digital Craftsman specializing in React, Node.js, and modern web development. I create digital experiences that drive results through precision, creativity, and technical excellence." />
         <meta name="keywords" content="Gokul Prasanth, Digital Craftsman, Fullstack Developer, React Developer, Node.js, Web Development, Portfolio, JavaScript, TypeScript" />
         <meta property="og:title" content="Gokul Prasanth - Digital Craftsman | Fullstack Developer" />
@@ -30,11 +33,13 @@ const Homepage = () => {
         <meta name="twitter:description" content="Fullstack Developer creating digital experiences that drive results" />
         <link rel="canonical" href="https://gokulprasanth.dev" />
       </Helmet>
-      <div className="min-h-screen bg-background">
+
+      <div className="min-h-screen bg-background px-10">
         <Header />
         
         <main>
           <HeroSection onNavigate={scrollToSection} />
+          
           <section id="about">
             <AboutPreview onNavigate={scrollToSection} />
           </section>
@@ -58,36 +63,33 @@ const Homepage = () => {
             <div className="grid md:grid-cols-4 gap-8">
               {/* Brand */}
               <div className="md:col-span-2">
+
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-brand flex items-center justify-center">
                     <span className="text-white font-bold text-lg">G</span>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-text-primary">Gokul Prasanth</h3>
-                    <p className="text-sm text-text-secondary font-mono">Digital Craftsman</p>
-                  </div>
                 </div>
+
                 <p className="text-text-secondary leading-relaxed mb-6 max-w-md">
                   Creating digital experiences that bridge the gap between complex technical requirements and intuitive user experiences.
                 </p>
+
                 <div className="flex space-x-4">
                   {[
-                    { icon: 'Github', url: 'https://github.com/gokulprasanth' },
-                    { icon: 'Linkedin', url: 'https://linkedin.com/in/gokulprasanth' },
-                    { icon: 'Twitter', url: 'https://twitter.com/gokulprasanth' },
-                    { icon: 'Mail', url: 'mailto:gokul@example.com' }
-                  ]?.map((social) => (
-                    <button
-                      key={social?.icon}
-                      onClick={() => window.open(social?.url, '_blank')}
-                      className="w-10 h-10 rounded-brand bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-brand-medium flex items-center justify-center"
-                    >
-                      <span className="sr-only">{social?.icon}</span>
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0z"/>
-                      </svg>
-                    </button>
-                  ))}
+                  { icon: 'Github', url: 'https://github.com/gokulprasanthb', label: 'GitHub' },
+                  { icon: 'Linkedin', url: 'https://www.linkedin.com/in/gokul-prasanth-ab3ab7365/', label: 'LinkedIn' },
+                  { icon: 'Twitter', url: 'https://twitter.com', label: 'Twitter' },
+                  { icon: 'Instagram', url: 'https://instagram.com', label: 'Instagram' }
+                ]?.map((social) => (
+                  <button
+                    key={social?.icon}
+                    onClick={() => window.open(social?.url, '_blank')}
+                    className="w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-brand-medium flex items-center justify-center brand-button-hover"
+                    aria-label={social?.label}
+                  >
+                    <Icon name={social?.icon} size={18} />
+                  </button>
+                ))}
                 </div>
               </div>
 
@@ -117,10 +119,8 @@ const Homepage = () => {
               <div>
                 <h4 className="font-semibold text-text-primary mb-4">Get in Touch</h4>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>gokul@example.com</li>
-                  <li>+1 (555) 123-4567</li>
-                  <li>San Francisco, CA</li>
-                  <li>Available Mon-Fri</li>
+                  <li>gokulprasanthbm@gmail.com</li>
+                  <li>Bengaluru, karnataka</li>
                 </ul>
               </div>
             </div>

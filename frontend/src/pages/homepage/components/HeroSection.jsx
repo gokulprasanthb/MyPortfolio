@@ -10,9 +10,7 @@ const HeroSection = ({ onNavigate }) => {
   const [isTyping, setIsTyping] = useState(true);
 
   const typewriterTexts = [
-    "Digital Craftsman",
     "Fullstack Developer",
-    "React Specialist",
     "Problem Solver"
   ];
 
@@ -53,16 +51,6 @@ const HeroSection = ({ onNavigate }) => {
     <section id="hero" className="relative min-h-screen bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 brand-grid-lines opacity-30"></div>
-      {/* Floating Code Snippets */}
-      <div className="floating-code top-20 left-10 text-primary/20 hidden lg:block">
-        const developer = &#123; skills: ['React', 'Node.js'] &#125;;
-      </div>
-      <div className="floating-code top-40 right-20 text-secondary/20 hidden lg:block">
-        function buildAmazingThings() &#123; return 'success'; &#125;
-      </div>
-      <div className="floating-code bottom-32 left-1/4 text-accent/20 hidden lg:block">
-        &lt;Portfolio passion="coding" impact="high" /&gt;
-      </div>
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-20 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]">
           
@@ -85,7 +73,7 @@ const HeroSection = ({ onNavigate }) => {
             </motion.div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
+            <div className="space-y-4 py-4">
               <motion.h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary leading-tight"
                 initial={{ opacity: 0, y: 20 }}
@@ -120,30 +108,11 @@ const HeroSection = ({ onNavigate }) => {
               that drive results. Precision meets creativity, technical excellence with human-centered design.
             </motion.p>
 
-            {/* Key Stats */}
-            <motion.div 
-              className="grid grid-cols-3 gap-6 py-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-            >
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary">50+</div>
-                <div className="text-sm text-text-secondary">Projects Delivered</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-secondary">3+</div>
-                <div className="text-sm text-text-secondary">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-accent">100%</div>
-                <div className="text-sm text-text-secondary">Client Satisfaction</div>
-              </div>
-            </motion.div>
+  
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex py-4 flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 }}
@@ -173,7 +142,7 @@ const HeroSection = ({ onNavigate }) => {
               <Button
                 variant="secondary"
                 size="lg"
-                onClick={() => window.open('/assets/cv/gokul-prasanth-cv.pdf', '_blank')}
+                onClick={() => window.open('/assets/cv/Resume.pdf', '_blank')}
                 iconName="Download"
                 iconPosition="left"
                 className="brand-button-hover"
@@ -184,7 +153,7 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* Social Links */}
             <motion.div 
-              className="flex items-center space-x-4 pt-4"
+              className="flex items-center space-x-4 pt-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
@@ -192,10 +161,10 @@ const HeroSection = ({ onNavigate }) => {
               <span className="text-sm text-text-secondary">Connect with me:</span>
               <div className="flex space-x-3">
                 {[
-                  { icon: 'Github', url: 'https://github.com/gokulprasanth', label: 'GitHub' },
-                  { icon: 'Linkedin', url: 'https://linkedin.com/in/gokulprasanth', label: 'LinkedIn' },
-                  { icon: 'Twitter', url: 'https://twitter.com/gokulprasanth', label: 'Twitter' },
-                  { icon: 'Mail', url: 'mailto:gokul@example.com', label: 'Email' }
+                  { icon: 'Github', url: 'https://github.com/gokulprasanthb', label: 'GitHub' },
+                  { icon: 'Linkedin', url: 'https://www.linkedin.com/in/gokul-prasanth-ab3ab7365/', label: 'LinkedIn' },
+                  { icon: 'Twitter', url: 'https://twitter.com', label: 'Twitter' },
+                  { icon: 'Instagram', url: 'https://instagram.com', label: 'Instagram' }
                 ]?.map((social) => (
                   <button
                     key={social?.icon}
