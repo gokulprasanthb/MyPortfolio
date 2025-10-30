@@ -8,9 +8,20 @@ import ProjectsPreview from './components/ProjectsPreview';
 import ContactPreview from './components/ContactPreview';
 
 import Icon from '../../components/AppIcon';
+import { useLocation } from 'react-router-dom';
 
 
 const Homepage = () => {
+
+  const scrollToHeroSection = (sectionId) => {
+    const targetId = sectionId?.startsWith('#') ? sectionId?.substring(1) : sectionId;
+    const element = document.getElementById(targetId);
+    if (element) {
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setIsMenuOpen(false);
+    }
+  };
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -63,12 +74,19 @@ const Homepage = () => {
             <div className="grid md:grid-cols-4 gap-8">
               {/* Brand */}
               <div className="md:col-span-2">
-
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-brand flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">G</span>
-                  </div>
-                </div>
+                <div className="flex items-center">
+                  <button
+                    onClick={() => scrollToHeroSection('#hero')}
+                    className="flex items-center space-x-3 group pb-4"
+                  >
+                    <div className="relative">
+                      <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-brand flex items-center justify-center shadow-brand-subtle group-hover:shadow-brand-medium transition-all duration-brand-medium">
+                        <span className="text-white font-bold text-lg">G</span>
+                      </div>
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse-gentle"></div>
+                    </div>
+                  </button>
+              </div>
 
                 <p className="text-text-secondary leading-relaxed mb-6 max-w-md">
                   Creating digital experiences that bridge the gap between complex technical requirements and intuitive user experiences.
@@ -100,7 +118,7 @@ const Homepage = () => {
                   {[
                     { name: 'About', path: 'about' },
                     { name: 'Skills', path: 'skills' },
-                    { name: 'Portfolio', path: 'portfolio' },
+                    { name: 'Projects', path: 'portfolio' },
                     { name: 'Contact', path: 'contact' }
                   ]?.map((link) => (
                     <li key={link?.name}>
@@ -130,7 +148,7 @@ const Homepage = () => {
                 © {new Date()?.getFullYear()} Gokul Prasanth. All rights reserved.
               </p>
               <p className="text-text-secondary text-sm mt-4 md:mt-0">
-                Built with React, Tailwind CSS, and lots of ☕
+                Coded with React, styled with Tailwind CSS, and fueled by curiosity ⚙️
               </p>
             </div>
           </div>

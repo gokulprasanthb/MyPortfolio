@@ -3,43 +3,38 @@ import { motion } from 'framer-motion';
 import Icon from '../../../components/AppIcon';
 import Image from '../../../components/AppImage';
 import Button from '../../../components/ui/Button';
+import groceze from '../../../../public/assets/groceze.png';
+import dashboard from '../../../../public/assets/dashboard.png';
+
 
 const ProjectsPreview = ({ onNavigate }) => {
   const featuredProjects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Groceze - E-Commerce Platform',
       category: 'Fullstack Development',
       description: 'A modern e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory management, payment integration, and advanced analytics dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
-      metrics: {
-        performance: '+40% faster loading',
-        conversion: '+25% conversion rate',
-        users: '10K+ active users'
-      },
+      image: groceze,
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+      
       links: {
-        live: 'https://ecommerce-demo.com',
-        github: 'https://github.com/gokulprasanth/ecommerce-platform'
+        live: 'https://groceze.vercel.app/',
+        github: 'https://github.com/gokulprasanthb/groceze'
       },
       featured: true
     },
     {
-      id: 3,
-      title: 'Analytics Dashboard',
-      category: 'Data Visualization',
-      description: 'Comprehensive analytics dashboard with real-time data visualization, custom reporting, and interactive charts for business intelligence.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      technologies: ['React', 'D3.js', 'Express', 'Redis'],
-      metrics: {
-        insights: '50+ data insights',
-        processing: '1M+ data points',
-        speed: '3x faster queries'
-      },
+      id: 2,
+      title: 'Student Dashboard',
+      category: 'Fullstack Development',
+      description: 'Comprehensive analytics dashboard for students which enable them to register for labs and changing labs',
+      image: dashboard,
+      technologies: ['Next.js', 'Node.js', 'Express.js', 'MSSQL'],
       links: {
-        live: 'https://analytics-demo.com',
-        github: 'https://github.com/gokulprasanth/analytics-dashboard'
-      }
+        live: 'https://studentdashboard-wine.vercel.app/dashboard',
+        github: 'https://github.com/gokulprasanthb/student_dashboard'
+      },
+      featured: true
     }
   ];
 
@@ -92,7 +87,7 @@ const ProjectsPreview = ({ onNavigate }) => {
             transition={{ delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Each project represents a unique challenge solved through innovative thinking, clean code, and user-centered design. Here are some highlights from my portfolio.
+            Each project represents a unique challenge solved through innovative thinking, clean code, and user-centered design. Here are some highlights from my works.
           </motion.p>
         </motion.div>
 
@@ -111,7 +106,7 @@ const ProjectsPreview = ({ onNavigate }) => {
                 <Image
                   src={featuredProjects?.[0]?.image}
                   alt={featuredProjects?.[0]?.title}
-                  className="w-full h-full object-cover brand-image-enhance"
+                  className="w-full p-11 h-full object-cover brand-image-enhance"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
@@ -150,16 +145,6 @@ const ProjectsPreview = ({ onNavigate }) => {
                     </div>
                   </div>
 
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-4 py-4 border-t border-border">
-                    {Object.entries(featuredProjects?.[0]?.metrics)?.map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-lg font-bold text-primary">{value}</div>
-                        <div className="text-xs text-text-secondary capitalize">{key}</div>
-                      </div>
-                    ))}
-                  </div>
-
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button
@@ -187,91 +172,85 @@ const ProjectsPreview = ({ onNavigate }) => {
           </div>
         </motion.div>
 
-        {/* Other Projects Grid */}
-        <div className="grid md:grid-cols-1 gap-8 mb-16">
-          {featuredProjects?.slice(1)?.map((project, index) => (
-            <motion.div 
-              key={project?.id}
-              className="bg-card border border-border rounded-brand-xl overflow-hidden hover:shadow-brand-medium transition-all duration-brand-medium brand-card-hover"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 + index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <div className="grid md:grid-cols-2 gap-0">
-                {/* Project Image */}
-                <div className="relative h-48 md:h-auto overflow-hidden">
-                  <Image
-                    src={project?.image}
-                    alt={project?.title}
-                    className="w-full h-full object-cover brand-image-enhance"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <span className="bg-secondary/90 text-secondary-foreground px-2 py-1 rounded text-xs font-medium">
-                      {project?.category}
-                    </span>
-                  </div>
+         <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-card border border-border rounded-brand-xl overflow-hidden shadow-brand-medium hover:shadow-brand-prominent transition-all duration-brand-medium">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Project Image */}
+              <div className="relative h-64 lg:h-auto overflow-hidden">
+                <Image
+                  src={featuredProjects?.[1]?.image}
+                  alt={featuredProjects?.[1]?.title}
+                  className="w-full p-11   h-full object-cover brand-image-enhance"
+                />
+                <div className="absolute top-4 left-4">
+                  <span className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
+                    Featured Project
+                  </span>
                 </div>
+              </div>
 
-                {/* Project Content */}
-                <div className="p-6 space-y-4">
+              {/* Project Details */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <div className="space-y-6">
                   <div>
-                    <h3 className="text-xl font-bold text-text-primary mb-2">{project?.title}</h3>
-                    <p className="text-text-secondary text-sm leading-relaxed">
-                      {project?.description}
+                    <div className="text-sm text-secondary font-medium mb-2">
+                      {featuredProjects?.[1]?.category}
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+                      {featuredProjects?.[1]?.title}
+                    </h3>
+                    <p className="text-text-secondary leading-relaxed">
+                      {featuredProjects?.[1]?.description}
                     </p>
                   </div>
 
                   {/* Technologies */}
-                  <div className="flex flex-wrap gap-1">
-                    {project?.technologies?.map((tech) => (
-                      <span 
-                        key={tech}
-                        className="bg-muted text-text-secondary px-2 py-1 rounded text-xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Metrics */}
-                  <div className="grid grid-cols-3 gap-2 py-3 border-t border-border">
-                    {Object.entries(project?.metrics)?.map(([key, value]) => (
-                      <div key={key} className="text-center">
-                        <div className="text-sm font-semibold text-secondary">{value}</div>
-                        <div className="text-xs text-text-secondary capitalize">{key}</div>
-                      </div>
-                    ))}
+                  <div>
+                    <h4 className="text-sm font-semibold text-text-primary mb-3">Technologies Used</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {featuredProjects?.[1]?.technologies?.map((tech) => (
+                        <span 
+                          key={tech}
+                          className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => window.open(project?.links?.live, '_blank')}
+                      variant="default"
+                      onClick={() => window.open(featuredProjects?.[1]?.links?.live, '_blank')}
                       iconName="ExternalLink"
                       iconPosition="right"
-                      className="flex-1 brand-button-hover"
-                    >
-                      Live Demo
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => window.open(project?.links?.github, '_blank')}
-                      iconName="Github"
                       className="brand-button-hover"
                     >
-                      <span className="sr-only">View Code</span>
+                      View Live Demo
+                    </Button>
+                    <Button
+                      variant="outline"
+                      onClick={() => window.open(featuredProjects?.[1]?.links?.github, '_blank')}
+                      iconName="Github"
+                      iconPosition="left"
+                      className="brand-button-hover"
+                    >
+                      View Code
                     </Button>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* CTA Section */}
         <motion.div 

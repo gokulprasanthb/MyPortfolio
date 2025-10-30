@@ -16,10 +16,6 @@ const Header = () => {
     { name: 'Contact', path: '#contact', icon: 'Mail' }
   ];
 
-  // const secondaryItems = [
-  //   { name: 'Testimonials', path: '#testimonials', icon: 'MessageSquare' }
-  // ];
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -52,7 +48,7 @@ const Header = () => {
           <div className="flex items-center">
             <button
               onClick={() => scrollToSection('#hero')}
-              className="flex items-center space-x-3 group focus-brand"
+              className="flex items-center space-x-3 group"
             >
               <div className="relative">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-brand flex items-center justify-center shadow-brand-subtle group-hover:shadow-brand-medium transition-all duration-brand-medium">
