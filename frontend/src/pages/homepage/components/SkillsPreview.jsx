@@ -10,10 +10,10 @@ const SkillsPreview = ({ onNavigate }) => {
       icon: 'Monitor',
       color: 'primary',
       skills: [
-        { name: 'React.js', level: 95, icon: 'Code' },
-        { name: 'TypeScript', level: 90, icon: 'FileCode' },
-        { name: 'Tailwind CSS', level: 92, icon: 'Palette' },
-        { name: 'Next.js', level: 88, icon: 'Zap' }
+          { name: 'React.js', level: 95, icon: 'Code' },
+          { name: 'TypeScript', level: 90, icon: 'FileCode' },
+          { name: 'Tailwind CSS', level: 92, icon: 'Palette' },
+          { name: 'Next.js', level: 88, icon: 'Zap' }
       ]
     },
     {
@@ -111,61 +111,7 @@ const SkillsPreview = ({ onNavigate }) => {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {skillCategories?.map((category, categoryIndex) => {
-            const colors = getColorClasses(category?.color);
-            
-            return (
-              <motion.div 
-                key={category?.title}
-                className="bg-card border border-border rounded-brand-xl p-6 hover:shadow-brand-medium transition-all duration-brand-medium brand-card-hover"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + categoryIndex * 0.1 }}
-                viewport={{ once: true }}
-              >
-                {/* Category Header */}
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className={`w-12 h-12 ${colors?.bg} rounded-brand flex items-center justify-center`}>
-                    <Icon name={category?.icon} size={24} className={colors?.text} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-text-primary">{category?.title}</h3>
-                </div>
-                {/* Skills List */}
-                <div className="space-y-4">
-                  {category?.skills?.map((skill, skillIndex) => (
-                    <motion.div 
-                      key={skill?.name}
-                      className="space-y-2"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + categoryIndex * 0.1 + skillIndex * 0.05 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <Icon name={skill?.icon} size={16} className={colors?.text} />
-                          <span className="text-sm font-medium text-text-primary">{skill?.name}</span>
-                        </div>
-                        <span className="text-xs text-text-secondary font-mono">{skill?.level}%</span>
-                      </div>
-                      
-                      <div className="w-full bg-muted rounded-full h-2">
-                        <motion.div 
-                          className={`h-2 ${colors?.progress} rounded-full`}
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill?.level}%` }}
-                          transition={{ delay: 0.6 + categoryIndex * 0.1 + skillIndex * 0.05, duration: 0.8 }}
-                          viewport={{ once: true }}
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
+
 
         {/* Tech Stack Highlights */}
         <motion.div 
@@ -186,10 +132,14 @@ const SkillsPreview = ({ onNavigate }) => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             {[
-              { name: 'React', desc: 'Frontend Framework', icon: 'Code' },
+              { name: 'React.js', desc: 'Frontend Framework', icon: 'FileCode' },
+              { name: 'Tailwind CSS', desc: 'Styling Framework', icon: 'Palette' },
               { name: 'Node.js', desc: 'Backend Runtime', icon: 'Server' },
               { name: 'MongoDB', desc: 'Database', icon: 'Database' },
-              { name: 'AWS', desc: 'Cloud Platform', icon: 'Cloud' }
+              { name: 'Java', desc: 'Programming', icon: 'Computer' },
+              { name: 'HTML', desc: 'Markup Language', icon: 'Code' },
+              { name: 'SQL', desc: 'Database', icon: 'Database' },
+              { name: 'Express.js', desc: 'Backend Framework', icon: 'Globe' }
             ]?.map((tech, index) => (
               <motion.div 
                 key={tech?.name}
@@ -207,25 +157,6 @@ const SkillsPreview = ({ onNavigate }) => {
               </motion.div>
             ))}
           </div>
-
-          <motion.div 
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.4 }}
-            viewport={{ once: true }}
-          >
-            <Button
-              variant="default"
-              size="lg"
-              onClick={() => onNavigate('/skills')}
-              iconName="ArrowRight"
-              iconPosition="right"
-              className="brand-button-hover"
-            >
-              Explore All Skills & Certifications
-            </Button>
-          </motion.div>
         </motion.div>
       </div>
     </section>

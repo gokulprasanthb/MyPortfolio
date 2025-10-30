@@ -148,7 +148,7 @@ const Homepage = () => {
                 © {new Date()?.getFullYear()} Gokul Prasanth. All rights reserved.
               </p>
               <p className="text-text-secondary text-sm mt-4 md:mt-0">
-                Coded with React, styled with Tailwind CSS, and fueled by curiosity ⚙️
+                Coded with React, styled with Tailwind CSS
               </p>
             </div>
           </div>
