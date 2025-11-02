@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import Icon from '../../../components/AppIcon';
+import Icon from '../../../components/Appicon';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
 

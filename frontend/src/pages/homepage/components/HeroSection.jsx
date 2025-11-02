@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
+import Icon from '../../../components/Appicon';
+import Image from '../../../components/Appimage';
 import Button from '../../../components/ui/Button';
 
 const HeroSection = ({ onNavigate }) => {

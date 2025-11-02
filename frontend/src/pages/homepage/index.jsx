@@ -7,7 +7,7 @@ import SkillsPreview from './components/SkillsPreview';
 import ProjectsPreview from './components/ProjectsPreview';
 import ContactPreview from './components/ContactPreview';
 
-import Icon from '../../components/AppIcon';
+import Icon from '../../components/Appicon';
 import { useLocation } from 'react-router-dom';
 
 
