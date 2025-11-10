@@ -45,7 +45,7 @@ const Homepage = () => {
         <link rel="canonical" href="https://gokulprasanth.dev" />
       </Helmet>
 
-      <div className="min-h-screen bg-background px-10">
+      <div className="min-h-screen bg-background md:px-10">
         <Header />
         
         <main>

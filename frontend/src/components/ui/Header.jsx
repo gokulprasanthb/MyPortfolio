@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header 
-      className={`fixed px-10 top-0 left-0 right-0 z-header transition-all duration-brand-medium ${
+      className={`fixed md:px-10 top-0 left-0 right-0 z-header transition-all duration-brand-medium ${
         scrolled 
           ? 'bg-background/95 backdrop-brand shadow-brand-medium' 
           : 'bg-background/80'

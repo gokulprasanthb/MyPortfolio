@@ -63,7 +63,7 @@ const HeroSection = ({ onNavigate }) => {
           >
             {/* Status Badge */}
             <motion.div 
-              className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium"
+              className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-2 md:py-2 rounded-full text-sm font-medium"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -73,7 +73,7 @@ const HeroSection = ({ onNavigate }) => {
             </motion.div>
 
             {/* Main Heading */}
-            <div className="space-y-4 py-4">
+            <div className="space-y-4 md:py-4">
               <motion.h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary leading-tight"
                 initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* CTA Buttons */}
             <motion.div 
-              className="flex py-4 flex-col sm:flex-row gap-4"
+              className="flex md:py-4 flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 }}
@@ -153,7 +153,7 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* Social Links */}
             <motion.div 
-              className="flex items-center space-x-4 pt-10"
+              className="flex items-center space-x-4 md:pt-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
