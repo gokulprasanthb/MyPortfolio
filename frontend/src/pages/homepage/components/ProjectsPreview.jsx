@@ -13,7 +13,7 @@ const ProjectsPreview = ({ onNavigate }) => {
       id: 1,
       title: 'Groceze - E-Commerce Platform',
       category: 'Fullstack Development',
-      description: 'A modern e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory management, payment integration, and advanced analytics dashboard.',
+      description: 'A modern e-commerce solution built with React, Node.js, and MongoDB.',
       image: groceze,
       technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
       
@@ -152,7 +152,7 @@ const ProjectsPreview = ({ onNavigate }) => {
                       onClick={() => window.open(featuredProjects?.[0]?.links?.live, '_blank')}
                       iconName="ExternalLink"
                       iconPosition="right"
-                      className="brand-button-hover"
+                      className="brand-button-hover max-md:hidden"
                     >
                       View Live Demo
                     </Button>
@@ -232,7 +232,7 @@ const ProjectsPreview = ({ onNavigate }) => {
                       onClick={() => window.open(featuredProjects?.[1]?.links?.live, '_blank')}
                       iconName="ExternalLink"
                       iconPosition="right"
-                      className="brand-button-hover"
+                      className="brand-button-hover max-md:hidden"
                     >
                       View Live Demo
                     </Button>

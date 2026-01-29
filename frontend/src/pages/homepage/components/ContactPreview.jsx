@@ -265,7 +265,7 @@ const ContactPreview = ({ onNavigate }) => {
         </div>
 
         {/* Bottom CTA */}
-        <motion.div 
+        {/* <motion.div 
           className="mt-20 text-center bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-brand-xl p-8 md:p-12 border border-border"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -302,7 +302,7 @@ const ContactPreview = ({ onNavigate }) => {
               Download My CV
             </Button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

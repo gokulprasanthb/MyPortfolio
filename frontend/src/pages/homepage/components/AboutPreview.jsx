@@ -162,7 +162,7 @@ const AboutPreview = ({ onNavigate }) => {
         </div>
       </div>
 
-      <div className='md:px-28 max-md:px-14 pt-28 w-auto mx-0'>
+      {/* <div className='md:px-28 max-md:px-14 pt-28 w-auto mx-0'>
         <h2 className='text-4xl text-center font-bold text-black-950 pb-14'>Education and Qualifications</h2>
         <div className='flex flex-col md:flex-row-reverse max-md:space-y-14 text-gray-700'>
             <div  className='w-1/3 max-md:w-full md:space-y-3 p-14 max-md:p-8 bg-stone-100 hover:bg-white duration-500 rounded-lg hover:shadow-lg'>
@@ -181,7 +181,7 @@ const AboutPreview = ({ onNavigate }) => {
                     <h5>Passed out at 2019</h5>
             </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

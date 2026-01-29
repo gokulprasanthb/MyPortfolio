@@ -48,7 +48,7 @@ const HeroSection = ({ onNavigate }) => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
+    <section id="hero" className="max-md:pt-20 relative min-h-screen bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 brand-grid-lines opacity-30"></div>
       <div className="relative z-10 container mx-auto px-6 lg:px-8 pt-20 pb-16">
@@ -98,7 +98,7 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* Brand Promise */}
             <motion.p 
-              className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl"
+              className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl max-md:hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
@@ -153,10 +153,11 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* Social Links */}
             <motion.div 
-              className="flex items-center space-x-4 md:pt-10"
+              className="flex items-center space-x-4 md:pt-10 max-md:pt-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
+              max-m
             >
               <span className="text-sm text-text-secondary">Connect with me:</span>
               <div className="flex space-x-3">
