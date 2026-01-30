@@ -294,7 +294,7 @@ const ContactPreview = ({ onNavigate }) => {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => window.open('/assets/cv/Resume.pdf', '_blank')}
+              onClick={() => window.open('/assets/cv/Resume_.pdf', '_blank')}
               iconName="Download"
               iconPosition="left"
               className="brand-button-hover"

@@ -132,7 +132,7 @@ const SkillsPreview = ({ onNavigate }) => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             {[
-              { name: 'React.js', desc: 'Frontend Framework', icon: 'FileCode' },
+              { name: 'React.js', desc: 'Frontend Library', icon: 'FileCode' },
               { name: 'Tailwind CSS', desc: 'Styling Framework', icon: 'Palette' },
               { name: 'Node.js', desc: 'Backend Runtime', icon: 'Server' },
               { name: 'MongoDB', desc: 'Database', icon: 'Database' },
