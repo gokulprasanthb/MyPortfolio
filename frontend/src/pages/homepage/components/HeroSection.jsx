@@ -134,7 +134,7 @@ const HeroSection = ({ onNavigate }) => {
                 onClick={() => scrollToSection('portfolio')}
                 iconName="Eye"
                 iconPosition="left"
-                className="brand-button-hover"
+                className="brand-button-hover max-md:pt-10"
               >
                 Explore My Work
               </Button>
@@ -145,7 +145,7 @@ const HeroSection = ({ onNavigate }) => {
                 onClick={() => window.open('/assets/cv/Resume_.pdf', '_blank')}
                 iconName="Download"
                 iconPosition="left"
-                className="brand-button-hover"
+                className="brand-button-hover max-md:hidden"
               >
                 Download CV
               </Button>
@@ -153,7 +153,7 @@ const HeroSection = ({ onNavigate }) => {
 
             {/* Social Links */}
             <motion.div 
-              className="flex items-center space-x-4 md:pt-10 max-md:pt-20"
+              className="flex items-center space-x-4 md:pt-10 max-md:pt-24"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3 }}
