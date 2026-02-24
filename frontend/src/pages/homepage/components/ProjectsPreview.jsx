@@ -13,7 +13,7 @@ const ProjectsPreview = ({ onNavigate }) => {
       id: 1,
       title: 'Groceze - E-Commerce Platform',
       category: 'Fullstack Development',
-      description: 'A modern e-commerce solution built with React, Node.js, and MongoDB.',
+      description: 'A modern e-commerce solution built using React.js, Express.js and MongoDB',
       image: groceze,
       technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
       

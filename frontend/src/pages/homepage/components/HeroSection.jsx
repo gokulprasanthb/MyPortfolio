@@ -139,7 +139,7 @@ const HeroSection = ({ onNavigate }) => {
                 Explore My Work
               </Button>
               
-              <Button
+              {/* <Button
                 variant="secondary"
                 size="lg"
                 onClick={() => window.open('/assets/cv/Resume_.pdf', '_blank')}
@@ -148,7 +148,7 @@ const HeroSection = ({ onNavigate }) => {
                 className="brand-button-hover max-md:hidden"
               >
                 Download CV
-              </Button>
+              </Button> */}
             </motion.div>
 
             {/* Social Links */}
